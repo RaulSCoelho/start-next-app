@@ -23,9 +23,7 @@ export const installTemplate = async ({ appName, root, packageManager, template,
     cwd: templatePath,
     rename(name) {
       switch (name) {
-        case 'env':
         case 'gitignore':
-        case 'editorconfig':
         case 'eslintrc.json': {
           return `.${name}`
         }
