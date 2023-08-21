@@ -12,7 +12,7 @@ export default async function Page() {
 
   return (
     <div className="px-4 py-10 sm:px-20">
-      <Authorize redirect>
+      <Authorize admin redirect>
         <Users users={users || []} />
       </Authorize>
     </div>

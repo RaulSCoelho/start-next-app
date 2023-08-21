@@ -1,12 +1,11 @@
 import { Prisma } from '@prisma/client'
-import { DefaultArgs } from '@prisma/client/runtime'
 
 import { prisma } from '.'
 import { hashWord, isHashValid } from '../../lib/hash'
 import { generateToken } from '../../lib/jwt'
 
 class UsersApi {
-  prisma: Prisma.UserDelegate<Prisma.RejectOnNotFound | Prisma.RejectPerOperation | undefined, DefaultArgs>
+  prisma: Prisma.UserDelegate
 
   constructor() {
     this.prisma = prisma.user

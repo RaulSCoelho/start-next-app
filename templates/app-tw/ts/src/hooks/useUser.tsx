@@ -23,6 +23,7 @@ const UserContext = createContext({} as UserContextProps)
 
 export function UserProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User>()
+  const [firstFetch, setFirstFetch] = useState(true)
   const [loading, setLoading] = useState(false)
   const { refresh } = useRouter()
 
@@ -30,13 +31,13 @@ export function UserProvider({ children }: { children: ReactNode }) {
     async function retrieve() {
       const { accessToken } = parseCookies()
       if (accessToken) {
-        const { data, error } = await useAxios.get('api/token')
+        const { data, error } = await useAxios.get('api/users/get-by-token')
         if (!error && data) {
-          setUser(data.user)
+          setUser(data)
         }
       }
     }
-    retrieve()
+    retrieve().finally(() => setFirstFetch(false))
   }, [])
 
   async function login({ login, password }: SignInRequest) {
@@ -82,7 +83,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
         logout
       }}
     >
-      {children}
+      {!firstFetch && children}
     </UserContext.Provider>
   )
 }

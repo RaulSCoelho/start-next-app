@@ -16,7 +16,7 @@ export function Header() {
       <div className="flex h-full items-center gap-4">
         <IconButton icon={MdMenu} size={24} onClick={openSidebar} className="rounded bg-transparent" />
         <Link href="/" className="text-lg font-semibold">
-          Create Next App
+          Start Next App
         </Link>
       </div>
       <ThemeSwitcher />

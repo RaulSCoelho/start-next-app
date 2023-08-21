@@ -23,7 +23,7 @@ export function MainSidebar() {
   const { isOpen, close } = useMainSidebar()
 
   return (
-    <Sidebar open={isOpen} onClose={close} title="Create Next App" logo="/favicon.ico">
+    <Sidebar open={isOpen} onClose={close} title="Start Next App" logo="/favicon.ico">
       <Sidebar.Body>
         <Sidebar.Route title="Home" path="/" icon={IoHomeOutline} exact />
         <Sidebar.Route title="Components" path="/components" icon={RiFilePaper2Line} />
