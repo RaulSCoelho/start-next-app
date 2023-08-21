@@ -27,7 +27,7 @@ export const installTemplate = async ({ appName, root, packageManager, template,
         case 'gitignore':
         case 'editorconfig':
         case 'eslintrc.json': {
-          return `test.${name}`
+          return `.${name}`
         }
         // README.md is ignored by webpack-asset-relocator-loader used by ncc:
         // https://github.com/vercel/webpack-asset-relocator-loader/blob/e9308683d47ff507253e37c9bcbb99474603192b/src/asset-relocator.js#L227
