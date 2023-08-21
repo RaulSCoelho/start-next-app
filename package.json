@@ -6,7 +6,7 @@
     "next",
     "next.js"
   ],
-  "description": "Create Next.js-powered React apps with one command",
+  "description": "Start Next.js-powered React apps with one command",
   "repository": {
     "type": "git",
     "url": "https://github.com/RaulSCoelho/start-next-app"
